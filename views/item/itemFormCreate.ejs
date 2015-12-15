@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<form action="./save" class="col-md-4">
+    <div class = "rainbow">
+        <h3>New Item Form</h3>
+    <div class="form-group">
+        <label for="title">Name:</label>
+        <input type="text" name="title" id="title" value="" class="form-control" />
+    </div>
+    <label for="dept_id">Select Processing Department: </label>
+    <select id="dept_id" name="dept_id" class="form-control">
+        <% items.forEach(function(entry) { %>
+        <% var item = entry.title + " " + entry.serial + ", " + entry.unitCost + " "
+                + entry.qty + " " + entry.dept_id; %>
+        <option value="<%=  entry.dept_id %>">
+            <%= entry.dept_id + " : " + entry.dept_title %></option>
+        <% }); %>
+    </select>
+        </br>
+        <label for="qty">Current Invetory Quantity: </label>
+        <input type="text" name="qty" id="qty" value="" class="form-control" />
+        </br>
+        <label for="cpu">Cost / Unit: </label>
+        <input type="text" name="cpu" id="cpu" value="" class="form-control" />
+        </br>
+        <label for="serial">Serial ID: </label>
+        <input type="text" name="serial" id="serial" value="" class="form-control" />
+
+    <br />
+    <input type="submit" />
+    </div>
+</form>
+
+<% include ../partials/footer %>

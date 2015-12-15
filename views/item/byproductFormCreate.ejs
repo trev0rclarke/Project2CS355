@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<form action="./savebyproduct" class="col-md-4">
+
+    <div class = "rainbow">
+        <h3>New ByProduct Form</h3>
+        <div class="form-group">
+            <label for="title">Name:</label>
+            <input type="text" name="title" id="title" value="" class="form-control" />
+        </div>
+        <label for="item_id">Select Parent Item: </label>
+        <select id="item_id" name="item_id" class="form-control">
+            <% items.forEach(function(entry) { %>
+            <% var item = entry.title + " " + entry.serial + ", " + entry.unitCost + " "
+                    + entry.qty + " " + entry.dept_id; %>
+            <option value="<%=  entry.item_id %>">
+                <%= entry.item_id + " : " + entry.item_title %></option>
+            <% }); %>
+        </select>
+        </br>
+        <label for="byproduct_id">ByProduct ID: </label>
+        <input type="text" name="byproduct_id" id="byproduct_id" value="" class="form-control" />
+
+        <br />
+        <input type="submit" />
+    </div>
+</form>
+
+<% include ../partials/footer %>

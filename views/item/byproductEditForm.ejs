@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+
+<% if(typeof message !== 'undefined') { %>
+<div class="rainbow"><%= message %></div>
+<br />
+<% } %>
+
+<% if(typeof byproduct !== 'undefined' && byproduct.length == 1) { %>
+<form action="./update" class="col-md-4">
+    <div class="rainbow">
+        <h3>ByProduct Edit Form</h3>
+    <div class="form-group">
+        <label for="street">Enter the new ByProduct Name:</label>
+        <input type="text" name="name" id="name" value="<%= byproduct[0].name %>" class="form-control" />
+    </div>
+        <label for="item_id">Select Parent Item: </label>
+        <select id="item_id" name="item_id" class="form-control">
+            <% item.forEach(function(entry) { %>
+            <option value="<%=  entry.item_id %>">
+                <%= entry.item_id + " : " + entry.title %></option>
+            <% }); %>
+        </select>
+
+
+    <input type="hidden" name="byproduct_id" id="byproduct_id" value="<%= byproduct[0].byproduct_id %>" />
+
+    <br />
+    <input type="submit" />
+    </div>
+</form>
+<% }%>
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class = "rainbow">
+    <% if(typeof message !== 'undefined') { %>
+    <div class="rainbow"><%= message %></div>
+    <% } %>
+    <% if(typeof byproduct !== 'undefined' && byproduct.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th><span class = rainbow> ByProduct Name </span></th>
+            <th><span class = rainbow> Processing Department </span></th>
+            <th><span class = rainbow> Parent Item </span></th>
+        </tr>
+        <% for (var i=0; byproduct.length > i; i++) { %>
+        <tr>
+            <td><a href="/item/editbyproduct?byproduct_id=<%= byproduct[i].byproduct_id %>"> <%= byproduct[i].title %></a></td>
+            <td><%= byproduct[i].dept_title %></td>
+            <td><%= byproduct[i].item_title %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/item/createbyproduct">Create New ByProduct</a>
+</div>
+
+<% include ../partials/footer %>

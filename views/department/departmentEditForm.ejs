@@ -1,0 +1,9 @@
+<label for="dept_id">Select Parent :</label>
+<select id="dept_id" name="dept_id" class="form-control">
+    <% department.forEach(function(entry) { %>
+    <% var item = entry.title + " " + entry.serial + ", " + entry.unitCost + " "
+            + entry.qty + " " + entry.dept_id; %>
+    <option value="<%=  entry.dept_id %>">
+        <%= entry.dept_id + " : " + entry.title %></option>
+    <% }); %>
+</select>
