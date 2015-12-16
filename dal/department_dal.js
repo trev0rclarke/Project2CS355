@@ -21,7 +21,6 @@ exports.GetAll = function(callback) {
     );
 }
 
-
 exports.GetByID = function(dept_id, callback) {
     console.log(dept_id);
     var query = 'SELECT * FROM Dept WHERE dept_id=' + dept_id;
@@ -38,4 +37,27 @@ exports.GetByID = function(dept_id, callback) {
     );
 }
 
-
+exports.Insert = function(dept, callback) {
+    console.log(dept);
+    var dynamic_query = 'INSERT INTO Dept (title, city, state, street, zip, phone_num)' +
+        'VALUES(' +
+        '\'' + dept.title +
+        '\', \'' + dept.city + '\', \'' +
+        dept.state + '\', \'' +
+        dept.street + '\', ' +
+        dept.zip +
+        ', \'' + dept.phone_num +
+        '\');';
+    console.log("test");
+    console.log(dynamic_query);
+    connection.query(dynamic_query,
+        function (err, result) {
+            if(err) {
+                console.log(err);
+                callback(err + "<br /> Please choose a different company name.");
+                return;
+            }
+            callback(false, result);
+        }
+    );
+}

@@ -10,11 +10,10 @@
         </div>
         <label for="item_id">Select Parent Item: </label>
         <select id="item_id" name="item_id" class="form-control">
-            <% items.forEach(function(entry) { %>
-            <% var item = entry.title + " " + entry.serial + ", " + entry.unitCost + " "
-                    + entry.qty + " " + entry.dept_id; %>
+            <% parent_items.forEach(function(entry) { %>
+
             <option value="<%=  entry.item_id %>">
-                <%= entry.item_id + " : " + entry.item_title %></option>
+                <%= entry.item_id + " : " + entry.title %></option>
             <% }); %>
         </select>
         </br>

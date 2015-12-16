@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="rainbow">
+    <% if(rs.length > 0) { %>
+    <h3>All ByProducts sold in 2015!</h3>
+    <h5>Click to get info for each item. </h5>
+    <table class="table" border="1">
+        <tr>
+            <th><span class = rainbow> Transaction Date </span></th>
+            <th><span class = rainbow> Sales Price / Unit </span></th>
+            <th><span class = rainbow> Quantity </span></th>
+            <th><span class = rainbow> ByProduct </span></th>
+            <th><span class = rainbow> Customer </span></th>
+            <th><span class = rainbow> Σ Revenue </span></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].Date %></td>
+            <td>$<%= rs[i].UnitPrice %></td>
+            <td><%= rs[i].qty %></td>
+            <td><%= rs[i].ByproductName %></td>
+            <td><%= rs[i].CustomerName %></td>
+            <td>$<%= parseFloat(rs[i].qty) * parseFloat(rs[i].UnitPrice)%></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+</div>
+
+<% include ../partials/footer %>

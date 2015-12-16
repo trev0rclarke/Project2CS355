@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="rainbow">
+    <% if(rs.length > 0) { %>
+    <h3>All Transactions for Items</h3>
+    <table border="1">
+        <tr>
+            <th><span class = rainbow> Item Title </span></th>
+            <th><span class = rainbow> Transaction Date </span></th>
+            <th><span class = rainbow> Σ Transaction Price </span></th>
+            <th><span class = rainbow> Quantity </span></th>
+            <th><span class = rainbow> Selling Price / Unit </span></th>
+            <th><span class = rainbow> Purchasing Customer </span></th>
+            <th><span class = rainbow> Customer's First Purchase Date </span></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].item_title %></td>
+            <td><%= rs[i].date %></td>
+            <td>$<%= rs[i].transactionPrice %></td>
+            <td><%= rs[i].qty %></td>
+            <td>$<%= Number((parseFloat(rs[i].transactionPrice) / parseInt(rs[i].qty)).toFixed(2)); %></td>
+            <td><%= rs[i].customer_name %></td>
+            <td><%= rs[i].firstPurchaseDate %></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/transaction/newitemsale">Create New Transaction(Item)</a>
+</div>
+
+<% include ../partials/footer %>

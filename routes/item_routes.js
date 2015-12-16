@@ -46,13 +46,6 @@ router.get('/allbyproducts', function(req, res) {
 });
 
 
-router.get('/view', function(req, res, next) {
-    console.log(req.query.address_id);
-    itemDal.GetByID(req.query.address_id,
-        function(err, result) {
-            res.render('address/address_info.ejs', {rs: result, another_value: 'test'});
-        });
-});
 
 router.get('/editbyproduct', function(req, res, next) {
     itemDal.GetByByProduct(req.query.byproduct_id, function (err, byproduct_result) {
@@ -80,7 +73,6 @@ router.get('/editbyproduct', function(req, res, next) {
     });
 });
 
-
     router.get('/save', function (req, res) {
         console.log("name equals: " + req.query.title);
 
@@ -98,17 +90,14 @@ router.get('/editbyproduct', function(req, res, next) {
 
     router.get('/savebyproduct', function (req, res) {
         console.log("name equals: " + req.query.title);
-
         itemDal.InsertByProduct(req.query, function (err, result) {
             if (err) {
                 res.send(err);
             }
             else {
-
-                res.send("Successfully saved the data.");
+                res.send("Successfully saved the data!");
             }
         });
-
     });
 
     router.get('/create', function (req, res, next) {
@@ -119,9 +108,11 @@ router.get('/editbyproduct', function(req, res, next) {
     });
 
     router.get('/createbyproduct', function (req, res, next) {
-        itemDal.GetAllByProducts(function (err, result) {
-            console.log(result);
-            res.render('item/byproductFormCreate.ejs', {items: result});
+        itemDal.GetAllByProducts(function (err, byproducts) {
+            console.log(byproducts);
+            itemDal.GetAll(function(err, items) {
+                res.render('item/byproductFormCreate.ejs', {items: byproducts, parent_items: items});
+            });
         })
     });
 
@@ -134,9 +125,12 @@ router.get('/editbyproduct', function(req, res, next) {
             if (err) {
                 alert_class = 'alert-danger';
                 message = err;
+                res.render('item/displayAllByproductInfo.ejs', message);
             }
-            console.log(result);
-            res.render('item/displayAllByproductInfo.ejs', {rs: result, alert_class: alert_class, message: message});
+            else {
+                console.log(result);
+                res.send("Successfully updated!");
+            }
         });
     });
 module.exports = router;

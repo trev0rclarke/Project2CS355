@@ -85,7 +85,7 @@ exports.GetByByProduct = function(byproduct_id, callback) {
 exports.Update = function(byproduct, callback) {
     console.log(byproduct);
     var query = 'UPDATE ByProduct SET title =\'' + byproduct.name + '\'' +
-        ', item_id = ' + byproduct.item_id + ' WHERE byproduct_id = 123;';
+        ', item_id = ' + byproduct.item_id + ' WHERE byproduct_id =' + byproduct.byproduct_id + ';';
     connection.query(query,
         function(err, result) {
             //connection.query('UPDATE address SET street = :street, city = :city, state_abbr = :state_abbr, zip = :zip WHERE address_id = :address_id', address_info, function(err, result) {
@@ -94,14 +94,17 @@ exports.Update = function(byproduct, callback) {
                 callback(err);
                 return;
             }
-            exports.GetAllByProducts(function(err, byproducts) {
-                if(err) {
-                    console.log(err);
-                    callback(err);
-                    return;
-                }
-                callback(err, byproducts);
-            })
+            else{
+                callback(err, result);
+            }
+            //exports.GetAllByProducts(function(err, byproducts) {
+            //    if(err) {
+            //        console.log(err);
+            //        callback(err);
+            //        return;
+            //    }
+            //    callback(err, byproducts);
+            //})
         });
 }
 

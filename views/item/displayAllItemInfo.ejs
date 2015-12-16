@@ -2,19 +2,17 @@
 
 <div class="rainbow">
     <% if(rs.length > 0) { %>
+    <h3>Items List</h3>
+    <h5>Click to get info for each item. </h5>
     <table border="1">
         <tr>
             <th><span class = rainbow> Item Name </span></th>
             <th><span class = rainbow> Processing Department </span></th>
-            <th><span class = rainbow> Unit Cost </span></th>
-            <th><span class = rainbow> Serial </span></th>
         </tr>
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
             <td><a href="/item/?item_id=<%= rs[i].item_id %>"> <%= rs[i].title %></a></td>
             <td><%= rs[i].dept_title %></td>
-            <td><%= '$' + rs[i].unitCost %></td>
-            <td><%= rs[i].serial %></td>
         </tr>
         <% } %>
     </table>

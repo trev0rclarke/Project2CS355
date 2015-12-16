@@ -2,9 +2,12 @@
 
 <div class = "rainbow">
     <% if(typeof message !== 'undefined') { %>
-    <div class="rainbow"><%= message %></div>
+    <div class="rainbow"><%= message %> <br/>
+    </div>
     <% } %>
     <% if(typeof byproduct !== 'undefined' && byproduct.length > 0) { %>
+    <h3>By-product List</h3>
+    <h5>Click each byproduct to edit. </h5>
     <table border="1">
         <tr>
             <th><span class = rainbow> ByProduct Name </span></th>
@@ -20,12 +23,20 @@
         <% } %>
     </table>
     <% } else { %>
-    No accounts are entered into the Account database table.
+    <br/> <br/>
+        <em>
+    This byproduct (with this parent item_id) is already a part of existing transactions, <br/>
+    please choose the pre-existing parent item, or edit a new byproduct that hasn't been <br/>
+    involved in any transactions yet. <br/>
+        </em>
+    <br/>
+    <a href="/item/allbyproducts"><em>Back to all byproducts!</em></a>
     <% } %>
 </div>
-
+    <br/>
+    <a href="/item/createbyproduct"><em>Create new byproduct!</em></a>
 <div style="margin-top:10px;">
-    <a href="/item/createbyproduct">Create New ByProduct</a>
+
 </div>
 
 <% include ../partials/footer %>

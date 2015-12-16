@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<form action="./saveitem" class="col-md-4">
+
+    <div class = "rainbow">
+        <h3>New Transaction Form</h3>
+
+        <label for="item_id">Select Inventory Item: </label>
+        <select id="item_id" name="item_id" class="form-control">
+            <% items.forEach(function(entry) { %>
+
+            <option value="<%=  entry.item_id %>">
+                <%= entry.item_id + " : " + entry.title %></option>
+            <% }); %>
+        </select>
+        <br />
+        <label for="Date">Date: <em>(Required Format: 'YYYY-MM-DD')</em></label>
+        <input type="text" name="Date" id="Date" value="" class="form-control" />
+        <br />
+
+        <label for="transactionPrice">Enter Σ Transaction Price: </label>
+        <input type="text" name="transactionPrice" id="transactionPrice" value="" class="form-control" />
+        <br />
+
+        <label for="qty">Select Quantity: </label>
+        <select id="qty" name="qty" class="form-control">
+            <% for(var i=1; i<2000; i++) { %>
+
+            <option value="<%= i %>">
+                <%= i %></option>
+            <% }; %>
+        </select>
+        <br/>
+
+        <label for="customer_id">Select Customer: </label>
+        <select id="customer_id" name="customer_id" class="form-control">
+            <% customers.forEach(function(entry) { %>
+
+            <option value="<%=  entry.customer_id %>">
+                <%= entry.customer_id + " : " + entry.name %></option>
+            <% }); %>
+        </select>
+        <br />
+
+        <input type="submit" />
+    </div>
+</form>
+
+<% include ../partials/footer %>

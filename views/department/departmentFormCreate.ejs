@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<form action="./save" class="col-md-4">
+
+    <div class = "rainbow">
+        <h3>New Department Form</h3>
+        <div class="form-group">
+            <label for="title">Name:</label>
+            <input type="text" name="title" id="title" value="" class="form-control" />
+        </div>
+
+        <label for="city">City: </label>
+        <input type="text" name="city" id="city" value="" class="form-control" />
+        <br />
+
+        <label for="state">State: </label>
+        <input type="text" name="state" id="state" value="" class="form-control" />
+        <br />
+
+        <label for="street">Street: </label>
+        <input type="text" name="street" id="street" value="" class="form-control" />
+        <br />
+
+        <label for="zip">Zip: </label>
+        <input type="text" name="zip" id="zip" value="" class="form-control" />
+        <br />
+
+        <label for="phone_num">Phone Number:<em>(xxx)xxx-xxxx</em> </label>
+        <input type="text" name="phone_num" id="phone_num" value="" class="form-control" />
+        <br />
+
+        <input type="submit" />
+    </div>
+</form>
+
+<% include ../partials/footer %>

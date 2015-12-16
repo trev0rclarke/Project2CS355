@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<% if(rs.length > 0) { %>
+<h1><span class=rainbow> Item Info </span></h1>
+
+<div class="rainbow"><p>
+        Department Title: <%= rs[0].title %> </br></br>
+        Phone Number: <%= rs[0].phone_num %> </br></br>
+        <a href="/department/all">Back to all departments!</a>
+    </p> </div>
+
+
+
+
+
+
+
+
+<% } else { %>
+No account matched this item id <%= item_id %>.
+<% } %>
+
+<% include ../partials/footer %>

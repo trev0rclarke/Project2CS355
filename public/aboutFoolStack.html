@@ -6,7 +6,7 @@
         body {
             background-color: #BFEDFF;
             margin: -50px;
-            font-family: "Helvetica";
+            font-family: "Courier New";
             font-size: 115%;
         }
         #Rainbow {
@@ -69,22 +69,33 @@
     <div id="indigo" class="rainbow-color"></div>
     <div id="violet" class="rainbow-color"></div>
 </div>
-<body>
 <br /><br />
-    <title>About Trevor Clarke</title>
-<h1><em>About Me</em></h1>
+<title>About Fool-Stack</title>
+<h1><em>About Fool-Stack Inventory Tracking Application</em></h1>
 <p><pre>
-        Hello World. My name is Trevor Clarke and I am and accounting student at <br/>
-    Sonoma State University, but I <em>love</em> programming. I hope that you enjoy my <br/>
-    website. The implementation of this web application as well as my CS370 course <br/>
-    were the first times in my programming career that I have ever gotten a glimpse <br/>
-    of what it's like to really see end-to-end and that has truly been a blast! <br/>
-    P.S. Haderman, if you are actually reading this: I apologize for sleeping in your class ( ͡° ͜ʖ ͡°)
-    <br/> <em>      Trevor Clarke ⚜ trevorclarke@trevor.clarke ⚜ (949)666-6666 ⚜ https://github.com/trev0rclarke </em>
-    <a href="https://github.com/trev0rclarke"><em>GitHub Absolute Link</em></a>
+        I created this inventory database in order to keep track of an entire multi-departmental
+company. The number one goal I had in mind was to allow users to keep track of all
+transactions occurring from a corporate accounting standpoint.
+Within the company, there are items which have serial numbers and unique IDs. These
+items each have a quantity that can be updated as well as other information regarding the
+specific item. During the manufacturing of items, there may be byproducts produced. These
+cannot be uniquely identified as they are unique only with paired with a specific item that
+they stem from i.e. there can be byproduct number 001-049 as well as number 001-033.
+Each item and byproduct is either processed or manufactured by a specific department,
+which can each be identified by their department code. Departments have a location, and
+oversee the items and byproducts that are part of transactions.
+
+    Transactions are uniquely identified by a transaction id number. Byproducts and or
+items can be a part of each transaction, and each transaction contains a quantity, a total
+price, and each transaction is made by a specific customer. Each customer can be uniquely
+identified by their id number, and they have a name, as well as the first time they made
+their purchase. The processing or manufacturing of each item or byproduct requires
+interactions with specific suppliers, and each supplier can be identified by their id, and they
+have a name, as well as an address. In order to connect which items and byproducts require
+which suppliers, I created the “NeededForMfg” link table!
+    <br/> <em>Trevor Clarke ⚜ trevorclarke@trevor.clarke ⚜ (949)666-6666</em>
     </pre>
 </p>
-</body>
 </head>
 
 </html>

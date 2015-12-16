@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+
+<div class = "rainbow">
+    <% if(typeof message !== 'undefined') { %>
+    <div class="rainbow"><%= message %> <br/>
+    </div>
+    <% } %>
+    <% if(typeof dept !== 'undefined' && dept.length > 0) { %>
+    <h3>Departments List</h3>
+    <h5>Click to get contact info for each department. </h5>
+    <table border="1">
+        <tr>
+            <th><span class = rainbow> Department Name </span></th>
+            <th><span class = rainbow> Street </span></th>
+            <th><span class = rainbow> City </span></th>
+            <th><span class = rainbow> State </span></th>
+            <th><span class = rainbow> Zip </span></th>
+        </tr>
+        <% for (var i=0; dept.length > i; i++) { %>
+        <tr>
+            <td><a href="/department/?dept_id=<%= dept[i].dept_id %>"> <%= dept[i].title %></a></td>
+            <td><%= dept[i].street%></td>
+            <td><%= dept[i].city%></td>
+            <td><%= dept[i].state %></td>
+            <td><%= dept[i].zip %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    <br/> <br/>
+    <em>
+        This byproduct (with this parent item_id) is already a part of existing transactions, <br/>
+        please choose the pre-existing parent item, or edit a new byproduct that hasn't been <br/>
+        involved in any transactions yet. <br/>
+    </em>
+    <br/>
+    <a href="/deparment/all"><em>Back to all departments!</em></a>
+    <% } %>
+</div>
+<br/>
+<a href="/department/create"><em>Create new Department!</em></a>
+<div style="margin-top:10px;">
+
+</div>
+
+<% include ../partials/footer %>
