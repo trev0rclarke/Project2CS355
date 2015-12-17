@@ -74,6 +74,21 @@ exports.GetAllBp2015 = function(callback) {
     );
 }
 
+exports.GetAllItems2000 = function(callback) {
+    connection.query('SELECT * FROM Item i WHERE EXISTS (SELECT date FROM Transaction t WHERE date LIKE \'%20\');',
+        function (err, result) {
+            if(err) {
+                console.log(err);
+                callback(true);
+                return;
+            }
+            console.log(result);
+            callback(false, result);
+        }
+    );
+}
+
+
 
 
 exports.GetByID = function(dept_id, callback) {

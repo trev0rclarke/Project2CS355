@@ -1,3 +1,5 @@
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -6,3 +8,230 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+  background-color:black;
+  background-image:
+          radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+          radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+          radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+          radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  width:  90%;
+  height: 100%;
+  font-size: 115%;
+  font-family: "Helvetica";
+  /*font-family: "Courier New" ;*/
+
+}
+#Rainbow {
+  height: 100%;
+  opacity: 0.7;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 100%;
+  z-index: -1;
+}
+#Rainbow .rainbow-color {
+  height: 100%;
+  margin-right: 20px;
+  width: 14%;
+  display: inline-block;
+}
+#Rainbow #red {
+  background-color: #D10000;
+  box-shadow: 25px 0 50px 25px #D10000;
+}
+#Rainbow #orange {
+  background-color: #FF6622;
+  box-shadow: -25px 0 50px 25px #FF6622, 25px 0 50px 25px #FF6622;
+}
+#Rainbow #yellow {
+  background-color: #FFDA21;
+  box-shadow: -25px 0 50px 25px #FFDA21, 25px 0 50px 25px #FFDA21;
+}
+#Rainbow #green {
+  background-color: #33DD00;
+  box-shadow: -25px 0 50px 25px #33DD00, 25px 0 50px 25px #33DD00;
+}
+#Rainbow #blue {
+  background-color: #1133CC;
+  box-shadow: -25px 0 50px 25px #1133CC, 25px 0 50px 25px #1133CC;
+}
+#Rainbow #indigo {
+  background-color: #220066;
+  box-shadow: -25px 0 50px 25px #220066, 25px 0 50px 25px #220066;
+}
+#Rainbow #violet {
+  background-color: #330044;
+  box-shadow: -25px 0 50px 25px #330044;
+}
+<!--
+.tab { margin-left: 40px; }
+-->
+
+input[type="text"]{
+
+    padding: 5px;
+    border: 1px solid #DDDDDD;
+
+    /*Applying CSS3 gradient*/
+    background:
+            linear-gradient(
+                    limegreen,
+                    transparent
+            ),
+            linear-gradient(
+                    90deg,
+                    skyblue,
+                    transparent
+            ),
+            linear-gradient(
+                    -90deg,
+                    coral,
+                    transparent
+            );
+
+    background-blend-mode: screen;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FBFBFB', endColorstr='#FFFFFF');
+
+    /*Applying CSS 3radius*/
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    /*Applying CSS3 box shadow*/
+    -moz-box-shadow: 0 0 2px #DDDDDD;
+    -webkit-box-shadow: 0 0 2px #DDDDDD;
+    box-shadow: 0 0 2px #DDDDDD;
+
+  }
+
+input[type="password"]{
+
+  padding: 5px;
+  border: 1px solid #DDDDDD;
+
+  /*Applying CSS3 gradient*/
+  background:
+          linear-gradient(
+                  limegreen,
+                  transparent
+          ),
+          linear-gradient(
+                  90deg,
+                  skyblue,
+                  transparent
+          ),
+          linear-gradient(
+                  -90deg,
+                  coral,
+                  transparent
+          );
+
+  background-blend-mode: screen;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FBFBFB', endColorstr='#FFFFFF');
+
+  /*Applying CSS 3radius*/
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  /*Applying CSS3 box shadow*/
+  -moz-box-shadow: 0 0 2px #DDDDDD;
+  -webkit-box-shadow: 0 0 2px #DDDDDD;
+  box-shadow: 0 0 2px #DDDDDD;
+
+}
+
+select{
+  background:
+          linear-gradient(
+                  limegreen,
+                  transparent
+          ),
+          linear-gradient(
+                  90deg,
+                  skyblue,
+                  transparent
+          ),
+          linear-gradient(
+                  -90deg,
+                  coral,
+                  transparent
+          );
+
+  background-blend-mode: screen;
+}
+
+.rainbow {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    /*background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );*/
+    color:transparent;
+    -webkit-background-clip: text;
+    /*background-clip: text;*/
+}
+
+
+
+
+.right{
+    position:fixed;
+    top:10px;
+    right: 10px;
+    font-size: 300%;
+    font-family: "Adobe Gothic Std B";
+}
+
+
+
+button, .button, input[type=submit] {
+    border: 0;
+    background: #5786c1;
+    color: white;
+    padding: 8px 14px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block; /* needed for anchors */
+    position: relative;
+    box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+    2px 1px #3a587f, 1px 2px #4171ae,
+    3px 2px #3a587f, 2px 3px #4171ae,
+    4px 3px #3a587f, 3px 4px #4171ae,
+    5px 4px #3a587f, 4px 5px #4171ae,
+    6px 5px #3a587f, 5px 6px #4171ae;
+&:hover, &:focus,
+&.hover, &.focus {
+              transform: translate(2px, 2px);
+              box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+              2px 1px #3a587f, 1px 2px #4171ae,
+              3px 2px #3a587f, 2px 3px #4171ae,
+              4px 3px #3a587f, 3px 4px #4171ae;
+          }
+&:active,
+&.active {
+     transform: translate(4px, 4px);
+     box-shadow: 1px 0px #3a587f, 0px 1px #4171ae,
+     2px 1px #3a587f, 1px 2px #4171ae;
+ }
+}
+
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+table td {border:solid 1px #fab; width:165px; word-wrap:break-word;}
+/*}*/
+/*th, td{*/
+/*width: 50%;*/
+/*border: blue solid 1px;*/
+/*}*/
+/*body{*/
+/*!*font-size: 50%;*!*/
+/*}*/

@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<form action="./save" class="col-md-4">
+
+    <div class = "rainbow">
+        <h3>New User Form</h3>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="text" name="email" id="email" value="" class="form-control" />
+        </div>
+
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" value="" class="form-control" />
+        <br />
+
+        <label for="firstname">First Name: </label>
+        <input type="text" name="firstname" id="firstname" value="" class="form-control" />
+        <br />
+
+        <label for="lastname">Last Name: </label>
+        <input type="text" name="lastname" id="lastname" value="" class="form-control" />
+        <br />
+
+
+
+        <input type="submit" />
+    </div>
+</form>
+
+<% include ../partials/footer %>

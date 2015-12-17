@@ -3,23 +3,29 @@
 <h2><span class = rainbow>Home Page!</span></h2>
 <a href="aboutMe.html"><em> About The Developer!</em></a> ⚜⚜⚜
 <a href="aboutFoolStack.html"><em> About The Web Application!</em></a> ⚜⚜⚜
-
+<% if (typeof data !== "undefined") {  %>
+<div class="right"><span class="rainbow"><em>Welcome, <%= data.firstname %>!</em></span></div>
+<% } %>
 <br />
 <h3><span class = rainbow>Project 2 Links: </span></h3>
-
+<a href="/login"><em>Login! (Displays User Info Upon Logging In | Authentication & Stored Procedure)</em></a> <a href="/logout"> <br/> <br/>
+    <em>Logout!</em></a>
+<br /> <br/>
 <a href="/item/all"><em>All Inventory Items: Extra Info & Create New!</em></a>
 <br /><br />
 <a href="/item/allbyproducts"><em>All ByProduct Items: Edit & Create!</em></a>
 <br /><br />
 <a href="/department/all"><em>All Departments: Contact Info & Create New!</em></a>
 <br /><br />
-<a href="/transaction/all2015"><em>All 2015 ByProduct Sales (View Example)</em></a>
+<a href="/transaction/all2015"><em>All 2015 ByProduct Sales (View & Aggregate Example)</em></a>
 <br /><br />
-<a href="/transaction/newtransaction">⚜⚜⚜⚜⚜<em>Create New Transaction (Connects all tables from my DB!)</em>⚜⚜⚜⚜⚜</a>
+<a href="/transaction/newtransaction"><em>Create New Transaction (Connects all tables from my DB!)</em></a>
 <br /><br />
 <a href="/transaction/allitemsales"><em>All item transactions /w Create Form!</em></a>
 <br /> <br />
 <a href="/transaction/allbyproductsales"><em>All ByProduct transactions /w Create Form!</em></a>
+<br /> <br />
+<a href="/transaction/all2000items"><em>All Items Sold After 2000 (Sub-query Example!)</em></a>
 <br /> <br />
 
 <% include partials/footer%>

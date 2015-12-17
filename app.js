@@ -10,6 +10,8 @@ var users = require('./routes/users');
 var item = require('./routes/item_routes');
 var dept = require('./routes/dept_routes');
 var transaction = require('./routes/transaction_routes');
+//var account = require('./routes/account_routes');
+var session = require('express-session');
 
 var app = express();
 
@@ -23,10 +25,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret: 'lab11'}));
 app.use('/', routes);
 app.use('/users', users);
+
+
+
+
+
+// Any routes that need authentication first, should be placed below this app.use()
+app.use(function(req, res, next) {
+  if(req.session.account == undefined) { //check if user is authenticated yet
+    res.redirect('/login');  // they aren't so ask them to login
+  }
+  else {
+    next();  //else proceed
+  }
+});
+
 app.use('/item', item);
 app.use('/department', dept);
 app.use('/transaction', transaction);

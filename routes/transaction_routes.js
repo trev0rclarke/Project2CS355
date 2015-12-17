@@ -91,6 +91,14 @@ router.get('/all2015', function(req, res) {
     });
 });
 
+router.get('/all2000items', function(req, res) {
+    transactionDal.GetAllItems2000(function (err, transaction) {
+        if (err) throw err;
+        // Sorry for ugly JSON!
+        res.send({rs: transaction});
+    });
+});
+
 router.get('/saveitem', function (req, res) {
     console.log("name equals: " + req.query.title);
 
